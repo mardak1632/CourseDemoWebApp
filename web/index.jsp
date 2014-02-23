@@ -13,24 +13,32 @@
     </head>
     <body>
         <h1>Hello Class!</h1>
+
+
+        <OL>
+            <LI><jsp:include page="inc/item1.jsp" />
+            <LI><jsp:include page="inc/item2.jsp" />
+            <LI><jsp:include page="inc/item3.jsp" />
+        </OL>
+
         <table border="1">
-        <%
-            for(int i = 0 ; i < 10; i++){
-         %>
-                <tr>
+            <%
+                for (int i = 0; i < 10; i++) {
+            %>
+            <tr>
                 <td>
-                <%=(i+1)%>
+                    <%=(i + 1)%>
                 </td>
                 <td>
-                <input type="text" />
+                    <input type="text" />
                 </td>
                 <td>
-                <input type="button" value="Tıkla" onclick="alert('deneme')" />
+                    <input type="button" value="Tıkla" onclick="alert('deneme')" />
                 </td>
-                </tr>
-        <%
-            }
-        %>
+            </tr>
+            <%
+                }
+            %>
         </table>
     </body>
 </html>
