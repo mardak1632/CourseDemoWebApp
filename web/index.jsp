@@ -24,9 +24,20 @@
         <a href="iletisim/telefonlar.jsp">telefonlar</a>
         <br/>
         <br/>
-        
-        
-        
+
+
+        <a href="urunler/urunler.jsp?urun_grubu=1">kitaplar</a>
+        <br/>
+        <a href="urunler/urunler.jsp?urun_grubu=2">filmler</a>
+        <br/>
+        <a href="urunler/urunler.jsp?urun_grubu=3">notebooklar</a>
+        <br/>
+        <a href="urunler/urunler.jsp?urun_grubu=4">pcler</a>
+        <br/>
+        <a href="urunler/urunler.jsp?urun_grubu=5">akıllı telefonlar</a>
+        <br/>
+
+
         <table border="1">
             <%
                 for (int i = 0; i < 10; i++) {
