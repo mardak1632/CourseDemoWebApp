@@ -15,12 +15,18 @@
         <h1>Hello Class!</h1>
 
 
-        <OL>
-            <LI><jsp:include page="inc/item1.jsp" />
-            <LI><jsp:include page="inc/item2.jsp" />
-            <LI><jsp:include page="inc/item3.jsp" />
-        </OL>
-
+        <a href="hakkimizda/bizkimiz.jsp">biz kimiz</a>
+        <br/>
+        <a href="hakkimizda/neleryaptik.jsp">neler yaptık</a>
+        <br/>
+        <a href="iletisim/adres/adres.jsp">adres</a>
+        <br/>
+        <a href="iletisim/telefonlar.jsp">telefonlar</a>
+        <br/>
+        <br/>
+        
+        
+        
         <table border="1">
             <%
                 for (int i = 0; i < 10; i++) {
