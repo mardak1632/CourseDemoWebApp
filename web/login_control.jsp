@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.bilisimegitim.course.dao.KullaniciDAO" %>
+<%@page import="com.bilisimegitim.course.entity.Kullanici" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,18 +16,24 @@
     <body>
         <%
         boolean onaylandi = true;
-        if(!request.getParameter("email").equals("masengul@gmail.com")){
-            onaylandi = false;
-        }
-        
-        if(!request.getParameter("password").equals("55555")){
-            onaylandi = false;
-        }
+        String email = request.getParameter("email");
+        String sifre = request.getParameter("password");
         
         if(onaylandi == false){
             out.write("E-mail veya şifre yanlış");
         } else {
-            out.write("Giriş Onaylandı.");
+            KullaniciDAO kullaniciDao = new KullaniciDAO();
+            Kullanici kullanici = kullaniciDao.getKullanici(email);
+            if(kullanici == null){
+                out.write("Kullanıcı bulunamadı");
+            } else {
+                if(kullanici.getSifre().equals(sifre)){
+                    request.getSession(true).setAttribute("kullaniciBilgisi", kullanici);
+                    request.getRequestDispatcher("/main_page.jsp").forward(request, response);
+                } else {
+                    out.write("Şifre yanlış");
+                }
+            }
         }
         %>
     </body>

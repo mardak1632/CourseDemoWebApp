@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +15,8 @@
     <body>
         <h1>Hello Class!</h1>
 
+
+        
 
         <a href="hakkimizda/bizkimiz.jsp">biz kimiz</a>
         <br/>
