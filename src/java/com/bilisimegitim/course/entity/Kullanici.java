@@ -22,6 +22,7 @@ public class Kullanici {
     private String email;
     private String sifre;
     
+    
     public Kullanici(){
         
     }
