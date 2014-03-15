@@ -56,7 +56,19 @@ public class KullaniciDAO {
     }
 
     public void createKullanici() {
-
+        String sqlStr="select * from kullanici where email=?";
+        Connection con=null;
+        Class.forName("com.mysql.jdbc.Driver");
+        con=DriverManager.getConnection("jdbc:mysql://localhost:3306/arda?zeroDateTimeBehavior=convertToNull");
+        psmt.setString(1, email);
+        ResultSet rs=pstmt.executeQuery();
+        if(rs.next())){
+            kullanici=new Kullanici();
+            kullanici.setKullanici(rs.getInt("kullanici_id"));
+            kullanici
+        }
+        }catch(ClassNotFoundException ex){
+            Logger.getLogger(KullaniciDAO);
     }
 
     public void updateKullanci() {
