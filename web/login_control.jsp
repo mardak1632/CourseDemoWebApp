@@ -7,13 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.bilisimegitim.course.dao.KullaniciDAO" %>
 <%@page import="com.bilisimegitim.course.entity.Kullanici" %>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Control</title>
-    </head>
-    <body>
+
         <%
         boolean onaylandi = true;
         String email = request.getParameter("email");
@@ -28,13 +22,13 @@
                 out.write("Kullanıcı bulunamadı");
             } else {
                 if(kullanici.getSifre().equals(sifre)){
-                    request.getSession(true).setAttribute("kullaniciBilgisi", kullanici);
-                    request.getRequestDispatcher("/main_page.jsp").forward(request, response);
+                    //request.getSession(true).setAttribute("kullaniciBilgisi", kullanici);
+                    //request.getRequestDispatcher("/main_page.jsp").forward(request, response);
+                    out.write("giriş onaylandı");
                 } else {
-                    out.write("Şifre yanlış");
+                    out.write("<table border='1'><tr><td>Şifre yanlış</td></tr><tr><td>Şifre yanlış</td></tr><tr><td>Şifre yanlış</td></tr><tr><td>Şifre yanlış</td></tr></table>");
                 }
             }
         }
         %>
-    </body>
-</html>
+
